@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Project Martikulasi</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="inner">
+      <div class="brand">
+        <!-- ganti dengan foto kecil bulat -->
+        <img src="D:\Website Sederhana Personal Hafizh/profilemini.jpeg" alt="avatar">
+      </div>
+      <div class="menu" style="margin-left:auto;">
+    <a class="pill" href="#home">Home</a>
+    <a class="pill" href="#about">About</a>
+    <a class="pill" href="#skills">Skills</a>
+    <a class="pill" href="#works">Works</a>
+    <a class="pill" href="#contact">Contact</a>
+    </div>
+  </nav>
+  <!-- HOME -->
+  <section id="home" class="section" style="padding:28px;text-align:center;">
+  <h1 style="margin:0 0 10px;font-size:36px;">Halo, saya <span style="color:#4c5bd4;">Harits Hafizh.H</span> 👋</h1>
+  <p style="color:#555;font-size:18px;margin:0 0 10px;">
+    Saya lahir di Banda Aceh pada 1 Juni 2010 dan saat ini berfokus membangun karier serta portofolio pribadi.
+  </p>
+  <p style="color:#555;font-size:16px;margin:0;">
+    Saya dibesarkan di keluarga yang suportif — ibu seorang guru dan ayah seorang abdi negara.  
+    Lulusan SMK Pertanian yang selalu ingin terus belajar dan berkembang di dunia teknologi.
+  </p>
+</section>
+
+
+  <!-- ABOUT -->
+  <section id="about" class="section about">
+    <div class="about-left">
+      <h1>About me</h1>
+      <p>
+        Nama saya <i>Harits Hafizh.H</i>, saya lahir di Banda Aceh pada 1 Juni 2010. Saat ini saya berfokus membangun karier dan portofolio pribadi.
+        Saya dibesarkan di keluarga yang suportif; ibu seorang guru dan ayah seorang abdi negara. Saya lulusan SMK Pertanian.
+      </p>
+      <p style="margin-top:18px;font-weight:700;font-size:22px;">Mungkin sekian perkenalan saya — Terima kasih.</p>
+    </div>
+    <div class="about-right">
+      <!-- Ganti src dengan foto portrait kamu -->
+      <img src="D:\Website Sederhana Personal Hafizh/profile.jpeg" alt="Foto Profil" />
+    </div>
+  </section>
+
+  <!--SKILLS-->
+
+  <section id="skills" class="section" style="padding:28px;">
+  <h1 style="font-size:32px;margin:0 0 10px">Skills</h1>
+  <ul style="margin:0;padding-left:18px;line-height:1.9">
+    <li>Perbaikan hardware & software smartphone multi-brand</li>
+    <li>Diagnosa kerusakan dan analisis troubleshooting</li>
+    <li>Manajemen SLA & kontrol kualitas servis</li>
+    <li>Penggunaan alat teknis: multimeter, power supply, hot air</li>
+    <li>Kepemimpinan tim & pelayanan pelanggan</li>
+  </ul>
+</section>
+
+<!--WORK-->
+<section id="works" class="section" style="padding:28px;">
+  <h1 style="font-size:32px;margin:0 0 14px">Works</h1>
+  <div style="display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))">
+    <article style="border:1px solid #e6e7eb;border-radius:8px;padding:14px;background:#fff">
+      <b>Proyek 1 — Optimasi Waktu Servis</b>
+      <p style="margin:6px 0 0;color:#555">
+        Mengurangi waktu perbaikan rata-rata dengan penataan ulang alur kerja dan kontrol spare part.
+      </p>
+    </article>
+
+    <article style="border:1px solid #e6e7eb;border-radius:8px;padding:14px;background:#fff">
+      <b>Proyek 2 — Peningkatan Kepuasan Pelanggan</b>
+      <p style="margin:6px 0 0;color:#555">
+        Membuat sistem tindak lanjut pelanggan pasca-servis untuk memastikan hasil perbaikan sesuai harapan.
+      </p>
+    </article>
+  </div>
+</section>
+
+<!--CONTACT-->
+<section id="contact" class="section" style="padding:28px;">
+  <h1 style="font-size:32px;margin:0 0 10px">Contact</h1>
+  <p style="margin:0 0 10px;color:#555">Email: <a href="mailto:emailkamu@example.com">haritshafizh@gmail.com</a></p>
+  <form action="#" method="post" onsubmit="alert('Form demo saja 😊'); return false;"
+        style="display:grid;gap:10px;max-width:520px">
+    <input type="text" placeholder="Nama" required>
+    <input type="email" placeholder="Email" required>
+    <textarea rows="4" placeholder="Pesan"></textarea>
+    <button type="submit" style="padding:12px 16px;border-radius:10px;border:1px solid #d0d7ff;background:#4c5bd4;color:#fff;font-weight:700;cursor:pointer">Kirim</button>
+  </form>
+</section>
+<!--Js-->
+  <footer>© <span id="y"></span> Project Martikulasi by Harits Hafizh</footer>
+
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+
+  <script>
+  document.querySelectorAll('.pill').forEach(link => {
+    link.addEventListener('click', () => {
+      document.querySelectorAll('.pill').forEach(a => a.classList.remove('active'));
+      link.classList.add('active');
+    });
+  });
+</script>
+
+<script>
+  // Ambil semua tombol navbar dan semua section
+  const navLinks = document.querySelectorAll('.pill');
+  const sections = document.querySelectorAll('.section');
+
+  // Fungsi untuk menampilkan section sesuai id
+  function showSection(id) {
+    sections.forEach(sec => sec.classList.remove('active'));
+    const target = document.querySelector(id);
+    if (target) target.classList.add('active');
+  }
+
+  // Saat klik navbar
+  navLinks.forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      navLinks.forEach(a => a.classList.remove('active'));
+      link.classList.add('active');
+      const targetId = link.getAttribute('href');
+      showSection(targetId);
+    });
+  });
+
+  // Tampilan saat pertama kali dibuka
+  showSection('#about');
+</script>
+
+</body>
+</html>
